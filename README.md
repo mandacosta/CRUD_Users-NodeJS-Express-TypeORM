@@ -1,90 +1,34 @@
-# S5-19 | 🏁 Entrega: KImóveis - TypeORM com Relacionamentos
+# CRUD - Users - NodeJS 🏁
 
-Para inciar este projeto, é necessário instalar as dependências, que serão utilizadas nos testes. Portanto utilize o comando abaixo para instalar tais dependências:
+### 🇬🇧 en
+Task for the 4th module of Kenzie Academy Course (Backend)
 
-````
-yarn install
-````
-<br>
+#### Goals
+It is a task that aims to be the first contact with Backend, creating an application of users that can create, list(read), login, update and soft delete.
+Also distincts Adm permissions from normal users.
 
-**Configure as variáveis de ambiente no seu .env**, passando as credenciais corretas para conectar em seu banco local
+#### Technologies
+- NodeJS | Express.js | TypeORM | PostgreSQL | TypeScript
 
+#### Libs
+- dotenv | bcryptjs | jsonwebtoken | yup | express-async-errors
 
-Com isso feito, para rodar sua aplicação, basta utilizar o comando
-````
-yarn dev
-````
+#### Tests - Jest.
+![image](https://user-images.githubusercontent.com/106614499/207883152-92f38a9f-9e80-4165-bec9-547224fc2109.png)
 
-<br>
+#### Routes
 
-# **Sobre os testes**
+- Creating New User: /users
+![image](https://user-images.githubusercontent.com/106614499/207885389-214eee27-9664-43ec-82e8-38dffaece902.png)
 
-Essa aplicação possui testes, que serão utilizados para validar, se todas as regras de negócio foram aplicadas de maneira correta.
+- New session: /login
+![image](https://user-images.githubusercontent.com/106614499/207885618-73e1c49a-a1b0-4e17-b1ed-48a0b00c16de.png)
 
-Os testes estão localizados em `src/__tests__`.
+- Get users (Adm permission): /users
+![image](https://user-images.githubusercontent.com/106614499/207885916-30790d3c-c17b-4879-9f67-a740fed47f91.png)
 
-Na subpasta `integration` estão os testes.
+- Edit users (Adm permission or resource owner): /users/:id (name, email and/or password)
+![image](https://user-images.githubusercontent.com/106614499/207886262-ee5c308f-94ef-4a27-b849-25423ff995cc.png)
 
-Já na subpasta `mocks` estão os dados que serão utilizados para os testes.
-
-No arquivo `jest.config.json` estão algumas configurações necessárias para os testes rodarem.
-
-**`De modo algum altere qualquer um desses arquivos.`** Isso poderá comprometer a integridade dos testes.
-
-E também não altere o script de `test` localizado no `package.json`. Isso será utilizado para rodar os testes.
-
-<br>
-
-
-# **Rodando os testes** 
-
-Para rodar os testes é necessário que no seu terminal, você esteja dentro do diretório do projeto.
-
-Estando no terminal e dentro do caminho correto, você poderá utilizar os comandos a seguir:
-
-### Rodar todos os testes
-````
-yarn test
-````
-#
-### Rodar todos os testes e ter um log ainda mais completo
-````
-yarn test --all
-````
-#
-
-### Rodar os testes de uma pasta específica
-`detalhe: repare que tests está envolvido por 2 underlines. Isso se chama dunder.`
-````
-yarn test ./scr/__tests__/integration/<subpasta>
-````
-#
-### Rodar os testes de um arquivo específico
-````
-yarn test ./scr/__tests__/integration/<subpasta>/<arquivo>
-````
-#
-### Rodar um teste específico
-````
-yarn test -t <describe ou test específico envolto em aspas>
-````
-````
-\\ ex: yarn test -t "/categories"
-\\ rodaria os testes do describe "/categorias" no caminho
-\\ ./scr/__tests__/integration/categories/categoriesRoutes.test.ts
-````
-
-<br>
-
-
-**Caso você queira verificar todas as opções de execução de testes, visite a [Documentação oficial do Jest](https://jestjs.io/docs/cli)**
-
-Após rodar um dos comandos aparecerá um log no seu terminal, contendo as informações da execução do teste.
-
-**Observação:** O teste pode demorar alguns segundos para ser finalizado. Quanto maior for o teste, mais tempo será consumido para a execução.
-
-#
-
-
-
-### Agora que já sabe como iniciar o seu projeto e rodar os testes, é hora de colocar a mão no código!
+- Soft delete users (Adm permission): /users/:id
+![image](https://user-images.githubusercontent.com/106614499/207886623-78bad8c6-7be5-4ae7-afa4-655c5ba8fc52.png)
